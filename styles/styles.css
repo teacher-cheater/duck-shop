@@ -201,12 +201,23 @@ body.no-scroll {
 @media (min-width: 960px) {
   .header__link {
     margin: 0;
-    border-bottom: 2px solid transparent;
   }
   .header__link:hover {
-    border-bottom: 2px solid #2581eb;
     color: #2581eb;
   }
+}
+.header__link.current {
+  color: #2581eb;
+}
+.header__link.current::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2581eb;
+  animation: underline 0.3s ease;
 }
 .header__icon {
   display: none;
@@ -215,7 +226,7 @@ body.no-scroll {
   .header__icon {
     display: block;
     position: absolute;
-    top: 6px;
+    top: 15px;
     right: 6px;
   }
 }
@@ -283,6 +294,14 @@ body.no-scroll {
   }
 }
 
+@keyframes underline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
 /* Overlay */
 .overlay {
   position: fixed;

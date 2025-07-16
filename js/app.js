@@ -5,21 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const phoneBtn = document.querySelectorAll(".header__phone");
   const modal = document.querySelector('.modal[data-modal="callback"]');
   const closeModalBtn = document.querySelector(".modal__close");
+  const menuLinks = document.querySelectorAll(".header__link");
 
-  // Функция для закрытия бургер-меню
   const closeBurgerMenu = () => {
     burger.classList.remove("active");
     mobileMenu.classList.remove("active");
   };
 
-  // Функция для закрытия модального окна
   const closeModal = () => {
     modal.classList.remove("active");
     overlay.classList.remove("active");
     document.body.classList.remove("no-scroll");
   };
 
-  // Бургер-меню
   burger.addEventListener("click", () => {
     burger.classList.toggle("active");
     mobileMenu.classList.toggle("active");
@@ -27,30 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("no-scroll");
   });
 
-  // Кнопки "Заказать звонок" (и в хедере, и в мобильном меню)
   phoneBtn.forEach(btn => {
     btn.addEventListener("click", () => {
-      // Закрываем бургер-меню, если оно открыто
       if (burger.classList.contains("active")) {
         closeBurgerMenu();
       }
-      // Открываем модальное окно
       modal.classList.add("active");
       overlay.classList.add("active");
       document.body.classList.add("no-scroll");
     });
   });
 
-  // Кнопка закрытия модального окна
   closeModalBtn.addEventListener("click", closeModal);
 
-  // Клик по оверлею
   overlay.addEventListener("click", () => {
     closeModal();
     closeBurgerMenu();
   });
 
-  // Закрытие по Escape
   document.addEventListener("keydown", e => {
     if (e.key === "Escape") {
       closeModal();
@@ -58,8 +50,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Предотвращаем закрытие при клике внутри модального окна
   modal.addEventListener("click", e => {
     e.stopPropagation();
   });
+
+  const setActiveTab = link => {
+    menuLinks.forEach(item => item.classList.remove("current"));
+    link.classList.add("current");
+  };
+
+  menuLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      setActiveTab(link);
+    });
+  });
+
+  if (menuLinks.length > 0) {
+    menuLinks[0].classList.add("current");
+  }
 });

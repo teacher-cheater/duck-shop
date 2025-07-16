@@ -148,12 +148,24 @@
     position: relative;
     @include lg {
       margin: 0;
-      border-bottom: 2px solid transparent;
       &:hover {
-        border-bottom: 2px solid $blue;
         color: $blue;
       }
     }
+    &.current {
+      color: $secondary-color;
+    }
+  }
+
+  &__link.current::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #2581eb;
+    animation: underline 0.3s ease;
   }
 
   &__icon {
@@ -161,7 +173,7 @@
     @include xl {
       display: block;
       position: absolute;
-      top: 6px;
+      top: 15px;
       right: 6px;
     }
   }
@@ -229,5 +241,14 @@
   margin-top: 4px;
   @include lg {
     display: none;
+  }
+}
+
+@keyframes underline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
