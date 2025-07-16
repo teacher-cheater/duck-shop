@@ -1,0 +1,52 @@
+$primary-color: #eab308;
+$primary-hover: #fec71c;
+$primary-pressed: #cc9500;
+
+$secondary-color: #2581eb;
+$secondary-hover: #439fff;
+$secondary-pressed: #0763cd;
+
+$bg-hover: #ffdd55;
+
+$black: #000000;
+$black02: #00000022;
+
+$blue: #2581eb;
+$white: #ffffff;
+$gray: #6b7280;
+
+$breakpoint-xs: 375px;
+$breakpoint-sm: 544px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 960px;
+$breakpoint-xl: 1280px;
+
+@mixin sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: $breakpoint-xxl) {
+    @content;
+  }
+}
