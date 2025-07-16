@@ -1,0 +1,155 @@
+.hero {
+  // .hero__container
+  height: 100vh;
+  &__container {
+    padding: 76px calc(50% - ($breakpoint-xl / 2)) 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  // .hero__title
+  &__title {
+    color: $black-title;
+    text-transform: uppercase;
+    font-size: 152px;
+    font-weight: 700;
+    font-family: "Jura";
+    position: relative;
+  }
+
+  // .hero__left-text
+  &__left-text {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+  }
+
+  // .hero__right-text
+  &__right-text {
+    position: absolute;
+    right: 17px;
+    top: 80px;
+  }
+
+  // .hero__duck-wrapper
+  &__duck-wrapper {
+    position: absolute;
+    @include lg {
+      top: 7%;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+
+  // .hero__duck-content-pc
+  &__duck-content-pc {
+    display: none;
+    @include lg {
+      display: block;
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+
+  // .hero__duck
+  &__duck {
+  }
+
+  &__quack {
+    position: absolute;
+    top: 215px;
+    left: -48px;
+  }
+
+  // .hero__duck-content-tb
+  &__duck-content-tb {
+    display: none;
+    @include md {
+      display: block;
+    }
+    @include lg {
+      display: none;
+    }
+  }
+
+  // .hero__duck-content-mb
+  &__duck-content-mb {
+    @include md {
+      display: none;
+    }
+  }
+
+  // .hero__text-block
+  &__block-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    flex: auto;
+
+    @include lg {
+      bottom: 329px;
+      right: 329px;
+    }
+  }
+
+  // .hero__text-block
+  &__text-block {
+    max-width: 315px;
+    line-height: 1.25;
+    color: $text-color;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  // .hero__btn
+  &__btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: $blue;
+    color: $white;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5;
+    font-size: 15px;
+    padding: 10px 12px;
+    transition: all 0.3s ease 0s;
+    &:active {
+      background-color: $secondary-pressed;
+    }
+    @include lg {
+      bottom: -37px;
+      right: 166px;
+      cursor: pointer;
+      &:hover {
+        background-color: $secondary-hover;
+      }
+    }
+  }
+
+  // .hero__nav
+  &__nav {
+    position: absolute;
+    bottom: 91px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  // .hero__menu
+  &__menu {
+    display: flex;
+    gap: 44px;
+  }
+
+  // .hero__item
+  &__item {
+    & img {
+      margin-top: 3px;
+      margin-right: 17px;
+    }
+  }
+}
