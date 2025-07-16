@@ -1,0 +1,117 @@
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $black02;
+  z-index: 9;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 100%;
+  max-width: 400px;
+  background-color: $white;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 12;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  @include lg {
+    padding: 30px;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  &__field {
+    margin-bottom: 15px;
+    & label {
+      color: $black;
+      font-weight: 500;
+      & span {
+        color: $orange;
+      }
+    }
+  }
+
+  &__field {
+    & input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid $white-dark;
+      border-radius: 14px;
+      font-family: inherit;
+      margin-top: 8px;
+      &::placeholder {
+        color: $ligth-gray;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    padding: 12px;
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    @include lg {
+      cursor: pointer;
+      &:hover {
+        background-color: $primary-hover;
+      }
+      &:active {
+        background-color: $primary-pressed;
+      }
+    }
+  }
+
+  &__policy {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+  }
+
+  &__policy a {
+    color: #007bff;
+    text-decoration: none;
+  }
+}

@@ -7,6 +7,7 @@
     <title>Duck Shop</title>
   </head>
   <body>
+    <div class="overlay"></div>
     <header class="header">
       <a href="index.html" class="header__logo">
         <img src="./images/logo.svg" alt="logo" />
@@ -37,6 +38,11 @@
           <li><a class="header__link" href="#">Блог</a></li>
           <li><a class="header__link" href="#">Отзывы</a></li>
           <li><a class="header__link" href="#">Контакты</a></li>
+          <li>
+            <button class="header__phone mobile-phone" type="button">
+              Заказать обратный звонок
+            </button>
+          </li>
         </ul>
       </nav>
       <div class="header__info">
@@ -100,5 +106,38 @@
         </div>
       </div>
     </header>
+
+    <div class="modal" data-modal="callback">
+      <button class="modal__close" type="button">
+        <img src="./images/close.svg" alt="close" />
+      </button>
+      <form class="modal__form">
+        <div class="modal__field">
+          <label for="username">Имя <span>*</span></label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Введите ваше имя"
+            required
+          />
+        </div>
+        <div class="modal__field">
+          <label for="phone-input">Телефон <span>*</span></label>
+          <input
+            type="tel"
+            id="phone-input"
+            placeholder="+7 (___) ___-__-__"
+            required
+          />
+        </div>
+        <button class="modal__submit" type="submit">Отправить</button>
+        <p class="modal__policy">
+          Нажимая кнопку "Отправить", вы соглашаетесь с
+          <a href="#">политикой конфиденциальности</a> и
+          <a href="#">договором оферты</a>
+        </p>
+      </form>
+    </div>
+    <script src="./js/app.js"></script>
   </body>
 </html>

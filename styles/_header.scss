@@ -10,6 +10,12 @@
   }
   // .header__logo
   &__logo {
+    position: relative;
+    z-index: 11;
+    transition: all 0.3s ease 0s;
+    @include lg {
+      position: static;
+    }
   }
 
   &__burger {
@@ -42,7 +48,7 @@
       &::before,
       &::after {
         content: "";
-        width: 100%;
+        width: 16px;
         height: 1px;
         background-color: $text-color;
         position: absolute;
@@ -64,12 +70,14 @@
     }
   }
 
-  &__burger._open-burger {
+  &__burger.active {
+    border: 0px;
     & span {
+      left: 9px;
       transform: rotate(-45deg) translateY(-50%);
       &::before {
         transform: rotate(-90deg) translate(50%);
-        top: 13px;
+        top: 8px;
       }
       &::after {
         width: 0;
@@ -79,32 +87,83 @@
 
   // .header__menu
   &__menu {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: fixed;
+    background-color: $white;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: -150%;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    transition: all 0.3s ease;
+    z-index: 10;
+    border-radius: 0 0 24px 24px;
 
-    gap: 20px;
     @include lg {
       display: flex;
+      flex-direction: row;
+      gap: 20px;
+      position: static;
+      width: auto;
+      height: auto;
     }
   }
 
+  &__menu.active {
+    top: 0;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black02;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 0 15px;
+  }
+
+  &__list.active,
+  &__overlay.active {
+    opacity: 1;
+  }
+
   &__link {
+    display: inline-block;
     color: $text-color;
     transition: border-bottom, color 0.2s ease 0s;
-    padding-bottom: 8px;
     font-size: 14px;
     font-weight: 500;
     line-height: 1.43;
+    padding: 8px 0;
     position: relative;
-    &:hover {
-      border-bottom: 2px solid $blue;
-      color: $blue;
+    @include lg {
+      margin: 0;
+      border-bottom: 2px solid transparent;
+      &:hover {
+        border-bottom: 2px solid $blue;
+        color: $blue;
+      }
     }
   }
 
   &__icon {
-    position: absolute;
-    top: 6px;
-    right: 6px;
+    display: none;
+    @include xl {
+      display: block;
+      position: absolute;
+      top: 6px;
+      right: 6px;
+    }
   }
 
   // .header__info
@@ -141,25 +200,34 @@
   // .header__phone
   &__phone {
     display: none;
+    background: $primary-color;
+    color: $white;
+    padding: 10px 12px;
+    border-radius: 8px;
+    &:active {
+      background: $primary-pressed;
+    }
     @include sm {
       display: block;
-      background: $primary-color;
-      color: $white;
-      padding: 10px 12px;
-      border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease-in 0s;
-
       &:hover {
         background: $primary-hover;
-      }
-      &:active {
-        background: $primary-pressed;
       }
     }
   }
 }
 
 .link-menu {
-  padding-right: 28px;
+  @include xl {
+    padding-right: 28px;
+  }
+}
+
+.mobile-phone {
+  display: block;
+  margin-top: 4px;
+  @include lg {
+    display: none;
+  }
 }
