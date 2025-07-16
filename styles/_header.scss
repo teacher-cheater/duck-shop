@@ -1,0 +1,165 @@
+.header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 16px;
+  @include sm {
+    padding: 16px calc(50% - 690px);
+    gap: 10px;
+  }
+  // .header__logo
+  &__logo {
+  }
+
+  &__burger {
+    display: flex;
+    position: relative;
+    z-index: 11;
+    border: 1px solid $bg-hover;
+    padding: 16px;
+    border-radius: 8px;
+    &:active {
+      background-color: $primary-color;
+      & span {
+        background-color: $white;
+        &::before,
+        &::after {
+          background-color: $white;
+        }
+      }
+    }
+    & span {
+      position: absolute;
+      width: 16px;
+      height: 1px;
+      background-color: $text-color;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%);
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      &::before,
+      &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $text-color;
+        position: absolute;
+      }
+      &::before {
+        top: 5px;
+      }
+      &::after {
+        bottom: 5px;
+      }
+    }
+
+    @include sm {
+      margin-left: 12px;
+    }
+
+    @include lg {
+      display: none;
+    }
+  }
+
+  &__burger._open-burger {
+    & span {
+      transform: rotate(-45deg) translateY(-50%);
+      &::before {
+        transform: rotate(-90deg) translate(50%);
+        top: 13px;
+      }
+      &::after {
+        width: 0;
+      }
+    }
+  }
+
+  // .header__menu
+  &__menu {
+    display: none;
+
+    gap: 20px;
+    @include lg {
+      display: flex;
+    }
+  }
+
+  &__link {
+    color: $text-color;
+    transition: border-bottom, color 0.2s ease 0s;
+    padding-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.43;
+    position: relative;
+    &:hover {
+      border-bottom: 2px solid $blue;
+      color: $blue;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+  }
+
+  // .header__info
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  // .header__cart
+  &__cart {
+    padding: 11px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease-in 0s;
+    & svg {
+      color: $gray;
+      transition: all 0.3s ease-in 0s;
+    }
+    &:hover {
+      border: 1px solid $blue;
+      & svg {
+        color: $blue;
+      }
+    }
+    &:active {
+      border: 1px solid $secondary-pressed;
+      & svg {
+        color: $secondary-pressed;
+      }
+    }
+  }
+
+  // .header__phone
+  &__phone {
+    display: none;
+    @include sm {
+      display: block;
+      background: $primary-color;
+      color: $white;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease-in 0s;
+
+      &:hover {
+        background: $primary-hover;
+      }
+      &:active {
+        background: $primary-pressed;
+      }
+    }
+  }
+}
+
+.link-menu {
+  padding-right: 28px;
+}
