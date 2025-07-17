@@ -393,8 +393,8 @@ body.no-scroll {
 }
 @media (min-width: 1280px) {
   .hero__duck-wrapper {
-    top: -5%;
-    left: 50%;
+    top: 2%;
+    left: 48%;
     right: auto;
     transform: translate(-50%);
   }
@@ -431,8 +431,8 @@ body.no-scroll {
 @media (min-width: 960px) {
   .hero__quack {
     position: absolute;
-    top: 215px;
-    left: -48px;
+    top: 171px;
+    left: -105px;
   }
 }
 .hero__duck-content-tb {
