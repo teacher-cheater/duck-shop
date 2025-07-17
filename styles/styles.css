@@ -154,7 +154,7 @@ body.no-scroll {
 .header__menu {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   position: fixed;
   background-color: #ffffff;
   width: 100vw;
@@ -164,10 +164,11 @@ body.no-scroll {
   top: -150%;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  height: 50vh;
   transition: all 0.3s ease;
   z-index: 10;
-  border-radius: 0 0 24px 24px;
+  border-radius: 0 0 12px 12px;
+  padding-top: 44px;
 }
 @media (min-width: 960px) {
   .header__menu {
@@ -178,6 +179,7 @@ body.no-scroll {
     position: static;
     width: auto;
     height: auto;
+    padding-top: 0;
   }
 }
 .header__menu.active {
@@ -274,6 +276,8 @@ body.no-scroll {
   color: #ffffff;
   padding: 10px 12px;
   border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
 }
 .header__phone:active {
   background: #cc9500;
@@ -281,8 +285,6 @@ body.no-scroll {
 @media (min-width: 544px) {
   .header__phone {
     display: block;
-    font-size: 15px;
-    font-weight: 600;
     letter-spacing: 0.5%;
     cursor: pointer;
     transition: all 0.3s ease-in 0s;
