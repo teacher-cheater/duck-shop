@@ -36,9 +36,11 @@
     @include lg {
       font-size: 152px;
       line-height: 77%;
+      max-width: 80%;
     }
 
     @include xl {
+      max-width: 100%;
       margin-bottom: 0;
     }
   }
@@ -47,8 +49,8 @@
   &__left-text {
     @include xl {
       position: absolute;
-      top: -118px;
-      left: -304px;
+      top: -277px;
+      left: -623px;
     }
   }
 
@@ -56,8 +58,8 @@
   &__right-text {
     @include xl {
       position: absolute;
-      right: -304px;
-      top: -24px;
+      right: -624px;
+      top: -185px;
     }
   }
 
@@ -78,6 +80,11 @@
       left: 50%;
       right: auto;
       transform: translate(-50%);
+    }
+
+    @include xxl {
+      top: 18%;
+      left: 51%;
     }
   }
 
@@ -159,8 +166,8 @@
 
     @include xl {
       position: absolute;
-      bottom: 177px;
-      right: -209px;
+      bottom: -4px;
+      right: -528px;
     }
   }
 
@@ -181,8 +188,8 @@
     @include xl {
       margin-bottom: 0;
       position: absolute;
-      bottom: 140px;
-      right: -42px;
+      bottom: -41px;
+      right: -363px;
       cursor: pointer;
       &:hover {
         background-color: $secondary-hover;

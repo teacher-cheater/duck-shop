@@ -358,25 +358,27 @@ body.no-scroll {
   .hero__title {
     font-size: 152px;
     line-height: 77%;
+    max-width: 80%;
   }
 }
 @media (min-width: 1280px) {
   .hero__title {
+    max-width: 100%;
     margin-bottom: 0;
   }
 }
 @media (min-width: 1280px) {
   .hero__left-text {
     position: absolute;
-    top: -118px;
-    left: -304px;
+    top: -277px;
+    left: -623px;
   }
 }
 @media (min-width: 1280px) {
   .hero__right-text {
     position: absolute;
-    right: -304px;
-    top: -24px;
+    right: -624px;
+    top: -185px;
   }
 }
 @media (min-width: 768px) {
@@ -397,6 +399,12 @@ body.no-scroll {
     left: 50%;
     right: auto;
     transform: translate(-50%);
+  }
+}
+@media (min-width: 1440px) {
+  .hero__duck-wrapper {
+    top: 18%;
+    left: 51%;
   }
 }
 .hero__duck-content-pc {
@@ -471,8 +479,8 @@ body.no-scroll {
 @media (min-width: 1280px) {
   .hero__text-block {
     position: absolute;
-    bottom: 177px;
-    right: -209px;
+    bottom: -4px;
+    right: -528px;
   }
 }
 .hero__btn {
@@ -493,8 +501,8 @@ body.no-scroll {
   .hero__btn {
     margin-bottom: 0;
     position: absolute;
-    bottom: 140px;
-    right: -42px;
+    bottom: -41px;
+    right: -363px;
     cursor: pointer;
   }
   .hero__btn:hover {
