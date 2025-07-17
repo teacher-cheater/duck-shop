@@ -48,7 +48,6 @@ html {
 body {
   line-height: 1;
   font-family: "Inter";
-  background-color: aquamarine;
 }
 
 body.no-scroll {
@@ -164,11 +163,10 @@ body.no-scroll {
   top: -150%;
   align-items: center;
   justify-content: center;
-  height: 50vh;
   transition: all 0.3s ease;
   z-index: 10;
   border-radius: 0 0 12px 12px;
-  padding-top: 44px;
+  padding: 80px 0 34px;
 }
 @media (min-width: 960px) {
   .header__menu {
@@ -179,7 +177,7 @@ body.no-scroll {
     position: static;
     width: auto;
     height: auto;
-    padding-top: 0;
+    padding: 0;
   }
 }
 .header__menu.active {
@@ -597,7 +595,7 @@ body.no-scroll {
 }
 @media (min-width: 960px) {
   .modal {
-    padding: 30px;
+    padding: 40px;
   }
 }
 .modal.active {

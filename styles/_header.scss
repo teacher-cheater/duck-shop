@@ -107,11 +107,10 @@
     top: -150%;
     align-items: center;
     justify-content: center;
-    height: 50vh;
     transition: all 0.3s ease;
     z-index: 10;
     border-radius: 0 0 12px 12px;
-    padding-top: 44px;
+    padding: 80px 0 34px;
     @include lg {
       background-color: transparent;
       display: flex;
@@ -120,7 +119,7 @@
       position: static;
       width: auto;
       height: auto;
-      padding-top: 0;
+      padding: 0;
     }
   }
 
