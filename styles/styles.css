@@ -80,7 +80,7 @@ body.no-scroll {
   z-index: 11;
   transition: all 0.3s ease 0s;
 }
-@media (min-width: 960px) {
+@media (min-width: 1280px) {
   .header__logo {
     position: static;
     width: 287px;
@@ -282,7 +282,7 @@ body.no-scroll {
 .header__phone:active {
   background: #cc9500;
 }
-@media (min-width: 544px) {
+@media (min-width: 768px) {
   .header__phone {
     display: block;
     letter-spacing: 0.5%;
@@ -324,6 +324,12 @@ body.no-scroll {
 @media (min-width: 960px) {
   .hero {
     height: 100vh;
+    padding: 50px 16px;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    height: 100vh;
     padding: 76px calc(50% - 640px) 0;
   }
 }
@@ -342,37 +348,61 @@ body.no-scroll {
   font-size: 92px;
   margin-bottom: 16px;
 }
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .hero__title {
-    font-size: 152px;
+    font-size: 122px;
+    margin-bottom: 32px;
   }
 }
 @media (min-width: 960px) {
+  .hero__title {
+    font-size: 152px;
+    line-height: 77%;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__title {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1280px) {
   .hero__left-text {
     position: absolute;
     top: -118px;
     left: -304px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 1280px) {
   .hero__right-text {
     position: absolute;
     right: -304px;
     top: -24px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .hero__duck-wrapper {
     position: absolute;
+    top: 100px;
+    right: -16px;
+  }
+}
+@media (min-width: 960px) {
+  .hero__duck-wrapper {
+    top: -67px;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__duck-wrapper {
     top: -5%;
     left: 50%;
+    right: auto;
     transform: translate(-50%);
   }
 }
 .hero__duck-content-pc {
   display: none;
 }
-@media (min-width: 960px) {
+@media (min-width: 1280px) {
   .hero__duck-content-pc {
     display: block;
     position: absolute;
@@ -385,6 +415,12 @@ body.no-scroll {
   position: absolute;
   top: 123px;
   left: -22px;
+}
+@media (min-width: 768px) {
+  .hero__quack {
+    top: 200px;
+    left: -43px;
+  }
 }
 @media (min-width: 960px) {
   .hero__quack {
@@ -401,7 +437,7 @@ body.no-scroll {
     display: block;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 1280px) {
   .hero__duck-content-tb {
     display: none;
   }
@@ -417,7 +453,7 @@ body.no-scroll {
     position: static;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 1280px) {
   .hero__block-info {
     position: absolute;
     top: 44%;
@@ -432,7 +468,7 @@ body.no-scroll {
   font-weight: 400;
   margin-bottom: 8px;
 }
-@media (min-width: 960px) {
+@media (min-width: 1280px) {
   .hero__text-block {
     position: absolute;
     bottom: 177px;
@@ -453,7 +489,7 @@ body.no-scroll {
 .hero__btn:active {
   background-color: #0763cd;
 }
-@media (min-width: 960px) {
+@media (min-width: 1280px) {
   .hero__btn {
     margin-bottom: 0;
     position: absolute;
@@ -468,6 +504,11 @@ body.no-scroll {
 @media (min-width: 960px) {
   .hero__nav {
     position: absolute;
+    bottom: 42px;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__nav {
     bottom: 97px;
     left: 50%;
     transform: translate(-50%);
@@ -480,8 +521,13 @@ body.no-scroll {
 }
 @media (min-width: 960px) {
   .hero__menu {
-    gap: 44px;
+    gap: 24px;
     flex-direction: row;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__menu {
+    gap: 44px;
   }
 }
 .hero__item {

@@ -20,7 +20,7 @@
     position: relative;
     z-index: 11;
     transition: all 0.3s ease 0s;
-    @include lg {
+    @include xl {
       position: static;
       width: 287px;
     }
@@ -231,7 +231,7 @@
     &:active {
       background: $primary-pressed;
     }
-    @include sm {
+    @include md {
       display: block;
       letter-spacing: 0.5%;
       cursor: pointer;

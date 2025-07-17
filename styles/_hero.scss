@@ -2,6 +2,11 @@
   padding: 30px 16px;
   @include lg {
     height: 100vh;
+    padding: 50px 16px;
+  }
+
+  @include xl {
+    height: 100vh;
     padding: 76px calc(50% - ($breakpoint-xl / 2)) 0;
   }
 
@@ -23,14 +28,24 @@
     font-size: 92px;
     margin-bottom: 16px;
 
+    @include md {
+      font-size: 122px;
+      margin-bottom: 32px;
+    }
+
     @include lg {
       font-size: 152px;
+      line-height: 77%;
+    }
+
+    @include xl {
+      margin-bottom: 0;
     }
   }
 
   // .hero__left-text
   &__left-text {
-    @include lg {
+    @include xl {
       position: absolute;
       top: -118px;
       left: -304px;
@@ -39,7 +54,7 @@
 
   // .hero__right-text
   &__right-text {
-    @include lg {
+    @include xl {
       position: absolute;
       right: -304px;
       top: -24px;
@@ -48,10 +63,20 @@
 
   // .hero__duck-wrapper
   &__duck-wrapper {
-    @include lg {
+    @include md {
       position: absolute;
+      top: 100px;
+      right: -16px;
+    }
+
+    @include lg {
+      top: -67px;
+    }
+
+    @include xl {
       top: -5%;
       left: 50%;
+      right: auto;
       transform: translate(-50%);
     }
   }
@@ -59,7 +84,7 @@
   // .hero__duck-content-pc
   &__duck-content-pc {
     display: none;
-    @include lg {
+    @include xl {
       display: block;
       position: absolute;
       top: -6px;
@@ -76,6 +101,11 @@
     position: absolute;
     top: 123px;
     left: -22px;
+    @include md {
+      top: 200px;
+      left: -43px;
+    }
+
     @include lg {
       position: absolute;
       top: 215px;
@@ -86,10 +116,11 @@
   // .hero__duck-content-tb
   &__duck-content-tb {
     display: none;
+
     @include md {
       display: block;
     }
-    @include lg {
+    @include xl {
       display: none;
     }
   }
@@ -109,7 +140,7 @@
   &__block-info {
     // flex: auto;
 
-    @include lg {
+    @include xl {
       position: absolute;
 
       top: 44%;
@@ -126,7 +157,7 @@
     font-weight: 400;
     margin-bottom: 8px;
 
-    @include lg {
+    @include xl {
       position: absolute;
       bottom: 177px;
       right: -209px;
@@ -147,7 +178,7 @@
     &:active {
       background-color: $secondary-pressed;
     }
-    @include lg {
+    @include xl {
       margin-bottom: 0;
       position: absolute;
       bottom: 140px;
@@ -163,6 +194,9 @@
   &__nav {
     @include lg {
       position: absolute;
+      bottom: 42px;
+    }
+    @include xl {
       bottom: 97px;
       left: 50%;
       transform: translate(-50%);
@@ -174,9 +208,14 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+
     @include lg {
-      gap: 44px;
+      gap: 24px;
       flex-direction: row;
+    }
+
+    @include xl {
+      gap: 44px;
     }
   }
 
