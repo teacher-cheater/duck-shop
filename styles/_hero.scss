@@ -1,8 +1,11 @@
 .hero {
-  // .hero__container
-  height: 100vh;
-  padding: 76px calc(50% - ($breakpoint-xl / 2)) 0;
+  padding: 30px 16px;
+  @include lg {
+    height: 100vh;
+    padding: 76px calc(50% - ($breakpoint-xl / 2)) 0;
+  }
 
+  // .hero__container
   &__container {
     position: relative;
     display: flex;
@@ -14,30 +17,39 @@
   &__title {
     color: $black-title;
     text-transform: uppercase;
-    font-size: 152px;
     font-weight: 700;
     font-family: "Jura";
     position: relative;
+    font-size: 92px;
+    margin-bottom: 16px;
+
+    @include lg {
+      font-size: 152px;
+    }
   }
 
   // .hero__left-text
   &__left-text {
-    position: absolute;
-    top: -118px;
-    left: -304px;
+    @include lg {
+      position: absolute;
+      top: -118px;
+      left: -304px;
+    }
   }
 
   // .hero__right-text
   &__right-text {
-    position: absolute;
-    right: -304px;
-    top: -24px;
+    @include lg {
+      position: absolute;
+      right: -304px;
+      top: -24px;
+    }
   }
 
   // .hero__duck-wrapper
   &__duck-wrapper {
-    position: absolute;
     @include lg {
+      position: absolute;
       top: -5%;
       left: 50%;
       transform: translate(-50%);
@@ -62,8 +74,13 @@
 
   &__quack {
     position: absolute;
-    top: 215px;
-    left: -48px;
+    top: 123px;
+    left: -22px;
+    @include lg {
+      position: absolute;
+      top: 215px;
+      left: -48px;
+    }
   }
 
   // .hero__duck-content-tb
@@ -79,19 +96,22 @@
 
   // .hero__duck-content-mb
   &__duck-content-mb {
+    position: absolute;
+    top: 34%;
+    right: -17px;
     @include md {
       display: none;
+      position: static;
     }
   }
 
   // .hero__text-block
   &__block-info {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     // flex: auto;
 
     @include lg {
+      position: absolute;
+
       top: 44%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -115,9 +135,6 @@
 
   // .hero__btn
   &__btn {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     background-color: $blue;
     color: $white;
     border-radius: 8px;
@@ -126,10 +143,13 @@
     font-size: 15px;
     padding: 10px 12px;
     transition: all 0.3s ease 0s;
+    margin-bottom: 143px;
     &:active {
       background-color: $secondary-pressed;
     }
     @include lg {
+      margin-bottom: 0;
+      position: absolute;
       bottom: 140px;
       right: -42px;
       cursor: pointer;
@@ -141,20 +161,31 @@
 
   // .hero__nav
   &__nav {
-    position: absolute;
-    bottom: 97px;
-    left: 50%;
-    transform: translate(-50%);
+    @include lg {
+      position: absolute;
+      bottom: 97px;
+      left: 50%;
+      transform: translate(-50%);
+    }
   }
 
   // .hero__menu
   &__menu {
     display: flex;
-    gap: 44px;
+    flex-direction: column;
+    gap: 12px;
+    @include lg {
+      gap: 44px;
+      flex-direction: row;
+    }
   }
 
   // .hero__item
   &__item {
+    padding: 6px 0;
+    @include lg {
+      padding: 0;
+    }
     & a {
       display: flex;
       width: fit-content;
@@ -168,7 +199,6 @@
   }
 
   &__arrow {
-    margin-top: 3px;
-    margin-right: 17px;
+    margin: 3px 20px 3px 9px;
   }
 }
